@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookerize — le carnet de recettes qui vous suit partout</title>
+<!-- Détection de la langue du navigateur — elle n'agit QUE sur cette page
+     d'accueil de la racine. Le français reste ici ; l'espagnol part sur es/ ;
+     et TOUTES les autres langues partent sur l'anglais (en/), qui sert de
+     repli universel. Le script est placé dans <head>, avant tout affichage :
+     la redirection est donc immédiate, sans saut visible.
+     Sans JavaScript (ou script bloqué), RIEN ne bouge : cette page reste la
+     page française, entièrement lisible et navigable. Aucune autre page du
+     site n'est concernée, et les adresses confidentialite.html et
+     suppression-compte.html (fiche Google Play) ne redirigent jamais. -->
+<script>
+(function () {
+  try {
+    // 1. On respecte d'abord un choix explicite : paramètre ?lang=… ou
+    //    préférence mémorisée quand la personne a cliqué Français/English/Español.
+    var choix = null;
+    var m = /(?:^|[?&])lang=(fr|en|es)(?:&|$)/.exec(location.search);
+    if (m) { choix = m[1]; }
+    if (!choix) { try { choix = localStorage.getItem('cookerize-langue'); } catch (e) {} }
+
+    var cible = choix;
+    if (!cible) {
+      // 2. Sinon, on lit les langues du navigateur, par ordre de préférence.
+      var listes = (navigator.languages && navigator.languages.length)
+        ? navigator.languages : [navigator.language || ''];
+      cible = 'en'; // repli universel par défaut : tout ce qui n'est ni fr ni es
+      for (var i = 0; i < listes.length; i++) {
+        var l = String(listes[i]).toLowerCase();
+        if (l.indexOf('fr') === 0) { cible = 'fr'; break; }
+        if (l.indexOf('es') === 0) { cible = 'es'; break; }
+      }
+    }
+
+    // 3. Redirection immédiate. Pour le français : on ne fait rien.
+    if (cible === 'es') { location.replace('es/index.html'); }
+    else if (cible === 'en') { location.replace('en/index.html'); }
+  } catch (e) {
+    /* JS indisponible : la page française s'affiche normalement, rien n'est cassé. */
+  }
+})();
+</script>
+<meta name="description" content="Cookerize est un carnet de recettes : 451 recettes illustrées, la création assistée, ce que vous pouvez cuisiner avec ce qu'il y a dans votre frigo, et un plan de cuisson qui tient l'horloge. Hors ligne, sans compte.">
+<meta property="og:title" content="Cookerize — le carnet de recettes">
+<meta property="og:description" content="451 recettes illustrées, la création assistée, le frigo qui répond. Hors ligne, sans compte.">
+<meta property="og:image" content="https://www.cookerize.net/img/banniere.png">
+<meta property="og:type" content="website">
+<!-- Les trois versions du site coexistent : c'est ce que ces balises disent à Google. -->
+<link rel="canonical" href="https://www.cookerize.net/">
+<link rel="alternate" hreflang="fr" href="https://www.cookerize.net/">
+<link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/">
+<link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/">
+<link rel="icon" href="img/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="enveloppe">
+    <img src="img/icone.png" alt="" width="34" height="34" style="border-radius:9px">
+    <a class="marque" href="/">Cookerize</a>
+    <nav>
+      <a href="#fonctions">Fonctions</a>
+      <a href="#ecrans">Aperçu</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <span aria-hidden="true" style="color:var(--trait)">|</span>
+      <a href="en/index.html" hreflang="en" lang="en">English</a>
+      <a href="es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="heros">
+    <div class="enveloppe">
+      <h1>Vos recettes, enfin au même endroit</h1>
+      <p class="accroche">
+        Cookerize est un carnet de recettes qui marche <strong>dans votre poche, sans réseau
+        et sans compte</strong>. Créez les vôtres en quelques secondes, voyez ce que vous
+        pouvez cuisiner avec ce qu'il y a dans votre frigo, et laissez le plan de
+        cuisson tenir l'horloge à votre place.
+      </p>
+      <p>
+        <a class="btn" href="#essai">Être prévenu du lancement</a>
+        <a class="btn second" href="#ecrans">Voir à quoi ça ressemble</a>
+      </p>
+      <p style="font-size:.9rem;color:var(--encre-eteinte);margin-top:1.4rem">
+        Bientôt sur Google Play · Android · Version gratuite avec publicité,
+        abonnement pour les fonctions avancées
+      </p>
+    </div>
+  </section>
+
+  <section class="enveloppe" style="padding-bottom:56px">
+    <h2 id="fonctions">Ce qu'il fait, et pourquoi c'est différent</h2>
+    <div class="grille deux">
+
+      <div class="fonction">
+        <h3>Créer une recette sans se battre</h3>
+        <p>
+          C'est le geste numéro un, et tout est fait pour lui. Écrivez vos
+          ingrédients : les quantités habituelles sont proposées, les unités
+          suivent votre pays, et les étapes se construisent à partir de ce que
+          vous avez réellement écrit. Trois entrées possibles : de zéro, à partir
+          d'une liste, ou en dupliquant une recette existante.
+        </p>
+      </div>
+
+      <div class="fonction">
+        <h3>451 recettes illustrées, prêtes à cuisiner</h3>
+        <p>
+          Un catalogue de recettes classiques et du monde — 134 d'entre elles
+          viennent de 36 pays — chacune avec sa photo et ses étapes jouables.
+          Vous ajoutez les vôtres à côté, ou vous partez d'une des nôtres.
+        </p>
+      </div>
+
+      <div class="fonction">
+        <h3>« Qu'est-ce que je peux cuisiner ? »</h3>
+        <p>
+          Dites ce qu'il y a dans votre frigo, et Cookerize classe les recettes
+          par ce que vous pouvez réellement faire : d'abord celles qui sont
+          complètes, puis celles auxquelles il manque le moins de choses.
+        </p>
+      </div>
+
+      <div class="fonction">
+        <h3>La liste de courses par rayon</h3>
+        <p>
+          Elle se déduit de votre planning, se range par rayon du magasin, et
+          quand vous cochez une ligne, l'ingrédient entre au frigo. Vous ne
+          cochez plus deux fois la même chose.
+        </p>
+      </div>
+
+      <div class="fonction">
+        <h3>Le plan de cuisson qui tient l'horloge</h3>
+        <p>
+          Vous préparez trois plats en même temps ? Cookerize ordonne les étapes
+          pour que tout arrive chaud, regroupe les gestes communs, place les
+          préchauffages et pose les minuteurs. C'est ce qui se fait de plus
+          délicat en cuisine, et c'est là que l'application est la plus utile.
+        </p>
+      </div>
+
+      <div class="fonction">
+        <h3>Hors ligne, sans compte</h3>
+        <p>
+          L'application fonctionne entièrement sans réseau : vos recettes sont
+          dans votre téléphone. Aucun compte n'est nécessaire pour l'utiliser.
+          Le compte n'existe que si vous voulez retrouver votre carnet sur un
+          autre appareil.
+        </p>
+      </div>
+
+      <div class="fonction">
+        <h3>Vos unités, votre langue</h3>
+        <p>
+          grammes ou onces, Celsius ou Fahrenheit : l'application demande votre
+          pays au premier lancement et s'y tient, partout. Les conversions sont
+          faites pour être utilisables en cuisine, pas pour afficher une
+          précision inutile.
+        </p>
+      </div>
+
+      <div class="fonction">
+        <h3>Et pour les abonnés</h3>
+        <p>
+          La recherche par valeurs nutritionnelles : « moins de 400 calories,
+          plus de 20 g de protéines », avec des curseurs à deux repères comme
+          pour un budget. Et la suppression de la publicité.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="ecrans" style="padding:24px 0 48px">
+    <div class="enveloppe"><h2>À quoi ça ressemble</h2></div>
+    <div class="ecrans">
+      <img src="img/ecran-01-accueil.jpg" alt="L'accueil de Cookerize">
+      <img src="img/ecran-02-bibliotheque.jpg" alt="La bibliothèque de recettes">
+      <img src="img/ecran-03-recherche.jpg" alt="La recherche">
+      <img src="img/ecran-04-fiche.jpg" alt="Une fiche de recette">
+      <img src="img/ecran-09-frigo.jpg" alt="Que cuisiner avec ce qu'il y a dans le frigo">
+      <img src="img/ecran-10-batch.jpg" alt="Le plan de cuisson">
+    </div>
+  </section>
+
+  <section id="essai" class="enveloppe" style="padding:24px 0 72px">
+    <div class="carte" style="text-align:center">
+      <h2 style="margin-top:0">Le lancement approche</h2>
+      <p style="max-width:46ch;margin:0 auto 1.6rem">
+        L'application passe actuellement ses derniers tests avant sa publication
+        sur Google Play. Écrivez-nous si vous voulez être prévenu, ou participer
+        aux tests.
+      </p>
+      <a class="btn" href="mailto:cookerizeproject@gmail.com?subject=Cookerize%20—%20me%20prévenir%20du%20lancement">Écrire à l'équipe</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="enveloppe">
+    <div class="liens">
+      <a href="confidentialite.html">Politique de confidentialité</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="suppression-compte.html">Supprimer mon compte</a>
+      <a href="mailto:cookerizeproject@gmail.com">Nous écrire</a>
+    </div>
+    <p style="margin:0">
+      Cookerize — Pierre Fanin, 221 avenue de Fabron, 06200 Nice, France.
+      Contact : cookerizeproject@gmail.com
+    </p>
+    <p style="margin:.6rem 0 0;font-size:.85rem">
+      Les marques et logos cités appartiennent à leurs propriétaires respectifs.
+      Google Play et AdMob sont des services de Google LLC.
+    </p>
+  </div>
+</footer>
+
+<!-- Mémorise le choix de langue fait via les liens Français / English / Español,
+     pour ne pas renvoyer quelqu'un ailleurs que vers la langue qu'il a demandée.
+     Sans JavaScript, cette page française reste affichée telle quelle. -->
+<script>
+(function () {
+  try {
+    var liens = document.querySelectorAll('a[hreflang]');
+    for (var i = 0; i < liens.length; i++) {
+      liens[i].addEventListener('click', function () {
+        var l = this.getAttribute('hreflang');
+        if (l === 'fr' || l === 'en' || l === 'es') {
+          try { localStorage.setItem('cookerize-langue', l); } catch (e) {}
+        }
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>

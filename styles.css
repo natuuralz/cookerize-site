@@ -1,0 +1,102 @@
+/* Cookerize — feuille de style du site.
+   Reprend les jetons de l'application : mêmes couleurs, mêmes polices.
+   Un site qui ne ressemble pas à son application est un site raté. */
+
+:root{
+  --ivoire:#faf7f0; --papier:#fffdf8; --creux:#f2ece0;
+  --encre:#22201d; --encre-douce:#4a463f; --encre-eteinte:#6e685d;
+  --sauge:#7c8b72; --sauge-profond:#5a6a52; --sauge-clair:#e7ecdf;
+  --terracotta:#c4623f; --terracotta-profond:#9f4f33; --terracotta-clair:#f6e3da;
+  --trait:#e5ded0;
+  --rayon:20px;
+  --large:1080px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ivoire); color:var(--encre);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:17px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif; font-weight:500; letter-spacing:-.01em; line-height:1.15}
+h1{font-size:clamp(2.1rem,5vw,3.4rem); margin:0 0 1rem}
+h2{font-size:clamp(1.4rem,3vw,2rem); margin:2.6rem 0 .9rem}
+h3{font-size:1.15rem; margin:2rem 0 .5rem}
+p{margin:0 0 1.1rem}
+a{color:var(--terracotta-profond)}
+a:hover{color:var(--terracotta)}
+code{background:var(--creux); padding:.15em .4em; border-radius:6px; font-size:.9em}
+
+.enveloppe{max-width:var(--large); margin:0 auto; padding:0 24px}
+
+/* ————— en-tête ————— */
+header{
+  position:sticky; top:0; z-index:10;
+  background:rgba(250,247,240,.92); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--trait);
+}
+header .enveloppe{display:flex; align-items:center; gap:14px; height:68px}
+header img{margin:0}
+.marque{font-family:'Fraunces',Georgia,serif; font-size:1.3rem; font-weight:600; color:var(--encre); text-decoration:none}
+header nav{margin-left:auto; display:flex; gap:20px; font-size:.92rem}
+header nav a{color:var(--encre-douce); text-decoration:none}
+header nav a:hover{color:var(--terracotta-profond)}
+
+/* ————— héros ————— */
+.heros{padding:72px 0 40px; text-align:center}
+.heros .accroche{font-size:1.2rem; color:var(--encre-douce); max-width:44ch; margin:0 auto 2rem}
+.heros img{border-radius:var(--rayon); max-width:100%; height:auto}
+
+/* ————— boutons ————— */
+.btn{
+  display:inline-block; padding:.85rem 1.6rem; border-radius:999px;
+  background:var(--sauge); color:#fff; text-decoration:none;
+  font-weight:500; border:1px solid var(--sauge); transition:background .15s;
+}
+.btn:hover{background:var(--sauge-profond); color:#fff}
+.btn.second{border-color:var(--trait); color:var(--encre); background:transparent}
+.btn.second:hover{background:var(--creux); color:var(--encre)}
+
+/* ————— cartes et grilles ————— */
+.carte{background:var(--papier); border:1px solid var(--trait); border-radius:var(--rayon); padding:28px}
+.grille{display:grid; gap:22px; grid-template-columns:1fr}
+@media(min-width:760px){ .grille.deux{grid-template-columns:1fr 1fr} .grille.trois{grid-template-columns:repeat(3,1fr)} }
+@media(min-width:980px){ .grille.quatre{grid-template-columns:repeat(4,1fr)} }
+
+.fonction{background:var(--papier); border:1px solid var(--trait); border-radius:var(--rayon); padding:24px}
+.fonction h3{margin-top:0; color:var(--sauge-profond)}
+.fonction p{font-size:.95rem; color:var(--encre-douce); margin-bottom:0}
+
+/* ————— écrans ————— */
+.ecrans{display:flex; gap:18px; overflow-x:auto; padding:8px 24px 24px; scroll-snap-type:x mandatory}
+.ecrans img{
+  height:430px; width:auto; border-radius:14px; flex:0 0 auto;
+  border:1px solid var(--trait); scroll-snap-align:center;
+  box-shadow:0 6px 20px rgba(34,32,29,.08);
+}
+
+/* ————— tableaux (pages juridiques) ————— */
+table{width:100%; border-collapse:collapse; margin:1.4rem 0; font-size:.94rem}
+th,td{text-align:left; padding:.7rem .8rem; border-bottom:1px solid var(--trait); vertical-align:top}
+th{background:var(--creux); font-weight:600}
+
+/* ————— pages de texte ————— */
+.document{padding:48px 0 72px; max-width:760px; margin:0 auto}
+.document h1{font-size:clamp(1.8rem,4vw,2.6rem)}
+.document h2{margin-top:2.6rem; padding-top:1.2rem; border-top:1px solid var(--trait)}
+.document ul{padding-left:1.3rem}
+.document li{margin-bottom:.5rem}
+
+.avis{
+  background:var(--sauge-clair); border-left:4px solid var(--sauge);
+  padding:18px 22px; border-radius:12px; margin:1.6rem 0;
+}
+.avis.a-completer{background:var(--terracotta-clair); border-left-color:var(--terracotta)}
+.avis p:last-child{margin-bottom:0}
+
+/* ————— pied ————— */
+footer{border-top:1px solid var(--trait); padding:40px 0 56px; font-size:.9rem; color:var(--encre-eteinte)}
+footer a{color:var(--encre-douce)}
+footer .liens{display:flex; flex-wrap:wrap; gap:18px; margin-bottom:18px}
