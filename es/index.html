@@ -3,12 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cookerize — el cuaderno de recetas que te acompaña a todas partes</title>
+<title>Cookerize: recetas y compras</title>
 <meta name="description" content="Cookerize es un cuaderno de recetas: 451 recetas ilustradas, creación asistida, lo que puedes cocinar con lo que hay en tu nevera y un plan de cocción que marca el ritmo. Sin conexión, sin cuenta.">
 <meta property="og:title" content="Cookerize — el cuaderno de recetas">
 <meta property="og:description" content="451 recetas ilustradas, creación asistida, la nevera que responde. Sin conexión, sin cuenta.">
 <meta property="og:image" content="https://www.cookerize.net/img/banniere.png">
 <meta property="og:type" content="website">
+<!-- Las tres versiones del sitio coexisten: es lo que estas etiquetas dicen a Google. -->
+<link rel="canonical" href="https://www.cookerize.net/es/">
+<link rel="alternate" hreflang="fr" href="https://www.cookerize.net/">
+<link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/">
+<link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/">
 <link rel="icon" href="../img/icone.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +26,10 @@
 <header>
   <div class="enveloppe">
     <img src="../img/icone.png" alt="" width="34" height="34" style="border-radius:9px">
-    <a class="marque" href="index.html">Cookerize</a>
+    <a class="marque" href="../index.html">Cookerize</a>
     <nav>
-      <a href="#funciones">Funciones</a>
-      <a href="#vistas">Vista previa</a>
+      <a href="#fonctions">Funciones</a>
+      <a href="#ecrans">Pantallas</a>
       <a href="privacidad.html">Privacidad</a>
       <span aria-hidden="true" style="color:var(--trait)">|</span>
       <a href="../index.html" hreflang="fr" lang="fr"><svg class="drapeau" viewBox="0 0 3 2" width="18" height="12" aria-hidden="true" focusable="false"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#002395"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg>Français</a>
@@ -34,104 +40,102 @@
 
 <main>
 
+  <!-- héros: texto a la izquierda, maqueta de móvil a la derecha -->
   <section class="heros">
     <div class="enveloppe">
-      <h1>Tus recetas, por fin en un solo lugar</h1>
-      <p class="accroche">
-        Cookerize es un cuaderno de recetas que funciona <strong>en tu bolsillo, sin red y sin cuenta</strong>. Crea las tuyas en unos segundos, mira lo que puedes cocinar con lo que hay en tu nevera, y deja que el plan de cocción lleve el reloj por ti.
-      </p>
-      <p>
-        <a class="btn" href="#aviso">Avísame del lanzamiento</a>
-        <a class="btn second" href="#vistas">Ver cómo es</a>
-      </p>
-      <p style="font-size:.9rem;color:var(--encre-eteinte);margin-top:1.4rem">
-        Próximamente en Google Play · Android · Versión gratuita con publicidad, suscripción para las funciones avanzadas
-      </p>
+      <div class="grille-heros">
+        <div>
+          <h1>Todas tus recetas, en tu bolsillo</h1>
+          <p class="accroche">
+            Crear una receta, cocinar con lo que tienes a mano, hacer la
+            compra. Sin conexión, sin cuenta.
+          </p>
+          <p>
+            <a class="btn" href="mailto:cookerizeproject@gmail.com?subject=Cookerize%20—%20avísame%20del%20lanzamiento">Avísame del lanzamiento</a>
+            <a class="btn second" href="#ecrans">Ver las pantallas</a>
+          </p>
+          <p class="note-heros">
+            Pronto en Google Play · Android · Gratis con publicidad, suscripción
+            para las funciones avanzadas
+          </p>
+          <div class="installer">
+            <div class="qr" id="qr"><span>QR próximamente</span></div>
+            <p>
+              <strong>Escanea para instalar</strong><br>
+              <span class="discret">El código llegará con la publicación en Google Play.</span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <!-- maqueta de móvil en CSS -->
+          <div class="phone">
+            <img src="../img/mobile/es-accueil.webp" alt="El inicio de Cookerize" width="780" height="1688">
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="enveloppe" style="padding-bottom:56px">
-    <h2 id="funciones">Lo que hace, y por qué es diferente</h2>
-    <div class="grille deux">
+    <h2 id="fonctions">Qué hace</h2>
+    <div class="grille trois">
 
       <div class="fonction">
-        <h3>Crear una receta sin pelearse</h3>
-        <p>
-          Es el gesto número uno, y todo está pensado para él. Escribe tus ingredientes: se proponen las cantidades habituales, las unidades siguen tu país y los pasos se construyen a partir de lo que realmente has escrito. Tres formas de empezar: desde cero, a partir de una lista o duplicando una receta existente.
-        </p>
+        <h3>451 recetas ilustradas</h3>
+        <p>Clásicas y del mundo — 36 países — cada una con su foto y sus pasos jugables.</p>
       </div>
 
       <div class="fonction">
-        <h3>451 recetas ilustradas, listas para cocinar</h3>
-        <p>
-          Un catálogo de recetas clásicas y del mundo — 134 de ellas proceden de 36 países — cada una con su foto y sus pasos jugables. Añades las tuyas al lado, o partes de una de las nuestras.
-        </p>
+        <h3>Crear una receta en 30 segundos</h3>
+        <p>Cantidades habituales propuestas, unidades de tu país, pasos construidos desde lo que escribes.</p>
       </div>
 
       <div class="fonction">
-        <h3>«¿Qué puedo cocinar?»</h3>
-        <p>
-          Di lo que hay en tu nevera y Cookerize clasifica las recetas por lo que realmente puedes hacer: primero las que están completas, luego las que menos cosas les faltan.
-        </p>
+        <h3>¿Qué puedo cocinar?</h3>
+        <p>Di lo que hay en la nevera: primero las recetas completas, luego las que menos les falta.</p>
+      </div>
+
+      <div class="fonction">
+        <h3>El plan de cocción</h3>
+        <p>¿Tres platos a la vez? Pasos ordenados, gestos agrupados, temporizadores puestos.</p>
       </div>
 
       <div class="fonction">
         <h3>La lista de la compra por pasillo</h3>
-        <p>
-          Se deduce de tu planificación, se ordena por pasillo del supermercado y, cuando marcas una línea, el ingrediente entra en la nevera. Ya no marcas dos veces lo mismo.
-        </p>
-      </div>
-
-      <div class="fonction">
-        <h3>El plan de cocción que marca el ritmo</h3>
-        <p>
-          ¿Preparas tres platos a la vez? Cookerize ordena los pasos para que todo llegue caliente, agrupa los gestos comunes, coloca los precalentamientos y pone los temporizadores. Es lo más delicado de la cocina, y ahí es donde la aplicación resulta más útil.
-        </p>
+        <p>Sacada del planning, ordenada por pasillo. Marcas una línea y el ingrediente entra en la nevera.</p>
       </div>
 
       <div class="fonction">
         <h3>Sin conexión, sin cuenta</h3>
-        <p>
-          La aplicación funciona por completo sin red: tus recetas están en tu teléfono. No hace falta ninguna cuenta para usarla. La cuenta solo existe si quieres recuperar tu cuaderno en otro dispositivo.
-        </p>
-      </div>
-
-      <div class="fonction">
-        <h3>Tus unidades, tu idioma</h3>
-        <p>
-          gramos u onzas, Celsius o Fahrenheit: la aplicación te pregunta tu país en el primer arranque y se mantiene en él, en todas partes. Las conversiones están hechas para ser útiles en la cocina, no para mostrar una precisión inútil.
-        </p>
-      </div>
-
-      <div class="fonction">
-        <h3>Y para los suscriptores</h3>
-        <p>
-          La búsqueda por valores nutricionales: «menos de 400 calorías, más de 20 g de proteínas», con controles deslizantes de dos topes como para un presupuesto. Y la eliminación de la publicidad.
-        </p>
+        <p>Todo se queda en tu teléfono. La cuenta solo sirve para encontrar tu cuaderno en otro sitio.</p>
       </div>
 
     </div>
+    <p class="et-aussi">
+      Y además: gramos u onzas, Celsius o Fahrenheit, tres idiomas — y para los
+      suscriptores, búsqueda por calorías y proteínas, sin publicidad.
+    </p>
   </section>
 
-  <section id="vistas" style="padding:24px 0 48px">
-    <div class="enveloppe"><h2>Cómo es</h2></div>
+  <section style="padding:24px 0 48px">
+    <div class="enveloppe"><h2 id="ecrans">En imágenes</h2></div>
     <div class="ecrans">
-      <img src="../img/ecran-01-accueil.jpg" alt="La pantalla de inicio de Cookerize">
-      <img src="../img/ecran-02-bibliotheque.jpg" alt="La biblioteca de recetas">
-      <img src="../img/ecran-03-recherche.jpg" alt="La búsqueda">
-      <img src="../img/ecran-04-fiche.jpg" alt="Una ficha de receta">
-      <img src="../img/ecran-09-frigo.jpg" alt="Qué cocinar con lo que hay en la nevera">
-      <img src="../img/ecran-10-batch.jpg" alt="El plan de cocción">
+      <div class="phone"><img src="../img/mobile/es-accueil.webp" alt="La pantalla de inicio, con las sugerencias de esta noche" width="780" height="1688" loading="lazy"></div>
+      <div class="phone"><img src="../img/mobile/es-recette.webp" alt="Una ficha de receta" width="780" height="1688" loading="lazy"></div>
+      <div class="phone"><img src="../img/mobile/es-frigo.webp" alt="Qué puedo cocinar con lo que hay en la nevera" width="780" height="1688" loading="lazy"></div>
+      <div class="phone"><img src="../img/mobile/es-batch.webp" alt="El plan de cocción" width="780" height="1688" loading="lazy"></div>
+      <div class="phone"><img src="../img/mobile/es-courses.webp" alt="La lista de la compra por pasillo" width="780" height="1688" loading="lazy"></div>
+      <div class="phone"><img src="../img/mobile/es-planning.webp" alt="El plan de la semana" width="780" height="1688" loading="lazy"></div>
     </div>
   </section>
 
-  <section id="aviso" class="enveloppe" style="padding:24px 0 72px">
+  <section id="essai" class="enveloppe" style="padding:24px 0 72px">
     <div class="carte" style="text-align:center">
       <h2 style="margin-top:0">El lanzamiento se acerca</h2>
       <p style="max-width:46ch;margin:0 auto 1.6rem">
-        La aplicación está pasando sus últimas pruebas antes de su publicación en Google Play. Escríbenos si quieres que te avisemos, o participar en las pruebas.
+        La aplicación está pasando sus últimas pruebas antes de publicarse en Google Play.
       </p>
-      <a class="btn" href="mailto:cookerizeproject@gmail.com?subject=Cookerize%20—%20avisadme%20del%20lanzamiento">Escribir al equipo</a>
+      <a class="btn" href="mailto:cookerizeproject@gmail.com?subject=Cookerize%20—%20avísame%20del%20lanzamiento">Escribir al equipo</a>
     </div>
   </section>
 
@@ -147,13 +151,30 @@
     </div>
     <p style="margin:0">
       Cookerize — aplicación editada por un particular. Contacto: cookerizeproject@gmail.com
-      Contacto: cookerizeproject@gmail.com
     </p>
     <p style="margin:.6rem 0 0;font-size:.85rem">
-      Las marcas y logotipos mencionados pertenecen a sus respectivos propietarios. Google Play y AdMob son servicios de Google LLC.
+      Las marcas y logotipos mencionados pertenecen a sus respectivos propietarios.
+      Google Play y AdMob son servicios de Google LLC.
     </p>
   </div>
 </footer>
+
+<!-- Memoriza la lengua elegida en los enlaces Français / English. -->
+<script>
+(function () {
+  try {
+    var liens = document.querySelectorAll('a[hreflang]');
+    for (var i = 0; i < liens.length; i++) {
+      liens[i].addEventListener('click', function () {
+        var l = this.getAttribute('hreflang');
+        if (l === 'fr' || l === 'en' || l === 'es') {
+          try { localStorage.setItem('cookerize-langue', l); } catch (e) {}
+        }
+      });
+    }
+  } catch (e) {}
+})();
+</script>
 
 </body>
 </html>
