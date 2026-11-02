@@ -100,3 +100,5 @@ th{background:var(--creux); font-weight:600}
 footer{border-top:1px solid var(--trait); padding:40px 0 56px; font-size:.9rem; color:var(--encre-eteinte)}
 footer a{color:var(--encre-douce)}
 footer .liens{display:flex; flex-wrap:wrap; gap:18px; margin-bottom:18px}
+
+.drapeau{vertical-align:-1px;margin-inline-end:.4rem;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
