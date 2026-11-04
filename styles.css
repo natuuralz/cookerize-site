@@ -40,7 +40,17 @@ header{
 header .enveloppe{display:flex; align-items:center; gap:14px; height:68px}
 header img{margin:0}
 .marque{font-family:'Fraunces',Georgia,serif; font-size:1.3rem; font-weight:600; color:var(--encre); text-decoration:none}
-header nav{margin-left:auto; display:flex; gap:20px; font-size:.92rem}
+header nav{
+  margin-left:auto; display:flex; gap:20px; font-size:.92rem;
+  /* Carrousel : toutes les pages restent joignables, même sur un écran étroit.
+     On fait défiler la bande horizontalement plutôt que de laisser filer le
+     reste de l'en-tête hors de l'écran. */
+  min-width:0; overflow-x:auto; white-space:nowrap;
+  scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;
+}
+header nav::-webkit-scrollbar{display:none}
+header nav > a{flex:0 0 auto; scroll-snap-align:start}
 header nav a{color:var(--encre-douce); text-decoration:none}
 header nav a:hover{color:var(--terracotta-profond)}
 
