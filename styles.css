@@ -45,6 +45,7 @@ header nav{
   /* Carrousel : toutes les pages restent joignables, même sur un écran étroit.
      On fait défiler la bande horizontalement plutôt que de laisser filer le
      reste de l'en-tête hors de l'écran. */
+  flex:1 1 auto;
   min-width:0; overflow-x:auto; white-space:nowrap;
   scrollbar-width:none; -webkit-overflow-scrolling:touch;
   scroll-snap-type:x proximity;
@@ -53,6 +54,26 @@ header nav::-webkit-scrollbar{display:none}
 header nav > a{flex:0 0 auto; scroll-snap-align:start}
 header nav a{color:var(--encre-douce); text-decoration:none}
 header nav a:hover{color:var(--terracotta-profond)}
+
+/* Le choix de langue ne défile PAS avec le ruban : il reste épinglé à droite.
+   Placé dans la barre, il disparaissait dès que la page avait beaucoup de liens —
+   l'accueil en a huit, et les langues, dernières, passaient hors de l'écran. */
+.langues{
+  flex:0 0 auto; display:flex; align-items:center; gap:10px;
+  margin-left:4px; padding-left:10px; border-left:1px solid var(--trait);
+}
+.langues a{display:inline-flex; align-items:center; gap:6px; color:var(--encre-douce); text-decoration:none}
+.langues a:hover{color:var(--terracotta-profond)}
+.langues .drapeau{flex:0 0 auto}
+
+/* Sur téléphone, les libellés « English » / « Español » mangeaient la moitié de
+   la largeur et repoussaient le bloc hors de l'écran. On garde les drapeaux —
+   reconnaissables — et le texte reste dans le document pour les lecteurs
+   d'écran (aria-label posé sur chaque lien). */
+@media(max-width:759px){
+  .langues a{font-size:0; gap:0}
+  .langues a .drapeau{margin:0 3px}
+}
 
 /* ————— héros ————— */
 .heros{padding:72px 0 40px; text-align:center}
