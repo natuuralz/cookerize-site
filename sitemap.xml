@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Plan du site — 18 pages, les 5 pages secondaires dans les trois langues
+     reliées entre elles par xhtml:link, exactement comme les accueils le font
+     déjà dans leur <head>. Dernière modification : 17 novembre 2026. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.cookerize.net/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/"/>
+  </url>
+
+  <url>
+    <loc>https://www.cookerize.net/faq.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/faq.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/faq.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/faq.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/faq.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/faq.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cookerize.net/conditions.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/conditions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/condiciones.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/terms.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/terms.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/conditions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/condiciones.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/terms.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/condiciones.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/conditions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/condiciones.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cookerize.net/confidentialite.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/privacy.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/privacidad.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/privacidad.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cookerize.net/mentions-legales.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/legal-notice.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/legal-notice.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/legal-notice.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/aviso-legal.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/legal-notice.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.cookerize.net/suppression-compte.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/suppression-compte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/delete-account.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/eliminar-cuenta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/delete-account.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/delete-account.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/suppression-compte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/delete-account.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/eliminar-cuenta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/delete-account.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/eliminar-cuenta.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/suppression-compte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/delete-account.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/eliminar-cuenta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/delete-account.html"/>
+  </url>
+
+</urlset>

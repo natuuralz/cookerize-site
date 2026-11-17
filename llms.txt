@@ -1,0 +1,44 @@
+# Cookerize
+
+> Cookerize est une application de cuisine, sur Android et sur le web, qui
+> répond à la question du soir : « qu'est-ce qu'on mange ? ». On y écrit ses
+> recettes, on y range ce qu'on a dans son frigo, et l'application propose
+> d'abord ce qu'on peut cuisiner sans repasser par le magasin.
+>
+> Le catalogue compte plus de 1100 recettes. L'application fonctionne hors
+> ligne et ne demande aucun compte pour commencer. Elle existe en français, en
+> anglais et en espagnol — les trois versions sont complètes, pas à moitié
+> traduites.
+
+Éditeur : Cookerize. Site officiel : https://www.cookerize.net
+
+## Pages principales
+
+- [Accueil (français)](https://www.cookerize.net/) — ce que fait l'application, écran par écran.
+- [Home (English)](https://www.cookerize.net/en/) — the same, in English.
+- [Inicio (Español)](https://www.cookerize.net/es/) — lo mismo, en español.
+- [Questions fréquentes](https://www.cookerize.net/faq.html) — les recettes, les calories, l'abonnement, les données.
+- [Frequent questions (English)](https://www.cookerize.net/en/faq.html)
+- [Preguntas frecuentes (Español)](https://www.cookerize.net/es/faq.html)
+
+## Ce que fait l'application
+
+- **Créer une recette.** On écrit les ingrédients, les étapes se construisent à partir d'eux.
+- **Le frigo.** On y range ce qu'on a ; quand une recette manque de quelque chose, l'application le dit.
+- **La liste de courses.** Cocher une ligne la fait entrer dans le frigo, sans rien retaper.
+- **Le batch cooking.** Plusieurs recettes — dont les siennes — dans une seule séance : gestes communs regroupés, minuteurs posés.
+- **Les apports.** Calories, protéines et lipides d'une recette, et la moyenne de la semaine jour par jour.
+- **Le mode cuisine.** Le déroulé des étapes, les minutes, les ingrédients de chaque étape, les mains occupées.
+
+## Démarches et données personnelles
+
+- [Politique de confidentialité](https://www.cookerize.net/confidentialite.html) — [Privacy policy](https://www.cookerize.net/en/privacy.html) — [Política de privacidad](https://www.cookerize.net/es/privacidad.html)
+- [Conditions d'utilisation](https://www.cookerize.net/conditions.html) — [Terms of Use](https://www.cookerize.net/en/terms.html) — [Condiciones de uso](https://www.cookerize.net/es/condiciones.html)
+- [Supprimer mon compte](https://www.cookerize.net/suppression-compte.html) — [Delete my account](https://www.cookerize.net/en/delete-account.html) — [Eliminar mi cuenta](https://www.cookerize.net/es/eliminar-cuenta.html)
+- [Mentions légales](https://www.cookerize.net/mentions-legales.html) — [Legal notice](https://www.cookerize.net/en/legal-notice.html) — [Aviso legal](https://www.cookerize.net/es/aviso-legal.html)
+
+## Note sur la langue de ce fichier
+
+Ce fichier est lu par des machines, pas par des visiteurs : il est écrit en
+français, mais chaque page qu'il liste existe dans les trois langues. Le site
+public, lui, est intégralement trilingue.

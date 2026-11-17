@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Les robots des moteurs génératifs sont les bienvenus : l'objectif est d'être
+# lu, cité et recommandé. Rien n'est interdit ici, à l'exception de rien.
+# Le fichier est volontairement sans liste de robots nommés : « * » couvre tout,
+# et une liste nominative ne serait fiable qu'une fois chaque nom vérifié à sa
+# source officielle. À faire au prochain cycle de veille.
+
+Sitemap: https://www.cookerize.net/sitemap.xml
