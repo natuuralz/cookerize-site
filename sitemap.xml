@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Plan du site — 18 pages, les 5 pages secondaires dans les trois langues
-     reliées entre elles par xhtml:link, exactement comme les accueils le font
-     déjà dans leur <head>. Dernière modification : 17 novembre 2026. -->
+<!-- Plan du site, engendré par OUTILS/poser-signaux-seo.py --plan :
+     chaque page porte ses trois équivalents de langue. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
@@ -29,7 +28,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/"/>
   </url>
-
   <url>
     <loc>https://www.cookerize.net/faq.html</loc>
     <lastmod>2026-11-17</lastmod>
@@ -54,7 +52,54 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/faq.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/faq.html"/>
   </url>
-
+  <url>
+    <loc>https://www.cookerize.net/frigo.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/frigo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/fridge.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/nevera.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/fridge.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/fridge.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/frigo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/fridge.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/nevera.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/fridge.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/nevera.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/frigo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/fridge.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/nevera.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/fridge.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/batch-cooking.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/batch-cooking.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/batch-cooking.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/batch-cooking.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/batch-cooking.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/batch-cooking.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/batch-cooking.html"/>
+  </url>
   <url>
     <loc>https://www.cookerize.net/conditions.html</loc>
     <lastmod>2026-11-17</lastmod>
@@ -79,7 +124,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/condiciones.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/terms.html"/>
   </url>
-
   <url>
     <loc>https://www.cookerize.net/confidentialite.html</loc>
     <lastmod>2026-11-17</lastmod>
@@ -104,7 +148,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/privacidad.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/privacy.html"/>
   </url>
-
   <url>
     <loc>https://www.cookerize.net/mentions-legales.html</loc>
     <lastmod>2026-11-17</lastmod>
@@ -129,7 +172,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/aviso-legal.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/legal-notice.html"/>
   </url>
-
   <url>
     <loc>https://www.cookerize.net/suppression-compte.html</loc>
     <lastmod>2026-11-17</lastmod>

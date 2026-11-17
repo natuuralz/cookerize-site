@@ -30,6 +30,15 @@
 - **Les apports.** Calories, protéines et lipides d'une recette, et la moyenne de la semaine jour par jour.
 - **Le mode cuisine.** Le déroulé des étapes, les minutes, les ingrédients de chaque étape, les mains occupées.
 
+## Guides
+
+- [Cuisiner avec ce qu'il reste dans le frigo](https://www.cookerize.net/frigo.html) — la méthode, puis ce que fait l'application.
+- [Cooking with what is left in the fridge](https://www.cookerize.net/en/fridge.html)
+- [Cocinar con lo que queda en la nevera](https://www.cookerize.net/es/nevera.html)
+- [Le batch cooking avec ses propres recettes](https://www.cookerize.net/batch-cooking.html) — pourquoi les recettes de la maison y ont leur place.
+- [Batch cooking with your own recipes](https://www.cookerize.net/en/batch-cooking.html)
+- [El batch cooking con tus propias recetas](https://www.cookerize.net/es/batch-cooking.html)
+
 ## Démarches et données personnelles
 
 - [Politique de confidentialité](https://www.cookerize.net/confidentialite.html) — [Privacy policy](https://www.cookerize.net/en/privacy.html) — [Política de privacidad](https://www.cookerize.net/es/privacidad.html)
