@@ -101,6 +101,54 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/batch-cooking.html"/>
   </url>
   <url>
+    <loc>https://www.cookerize.net/creer-une-recette.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/creer-une-recette.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/write-a-recipe.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/escribir-una-receta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/write-a-recipe.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/write-a-recipe.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/creer-une-recette.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/write-a-recipe.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/escribir-una-receta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/write-a-recipe.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/escribir-una-receta.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/creer-une-recette.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/write-a-recipe.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/escribir-una-receta.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/write-a-recipe.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/produits-de-saison.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/produits-de-saison.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/seasonal-food.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/productos-de-temporada.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/seasonal-food.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/en/seasonal-food.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/produits-de-saison.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/seasonal-food.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/productos-de-temporada.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/seasonal-food.html"/>
+  </url>
+  <url>
+    <loc>https://www.cookerize.net/es/productos-de-temporada.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/produits-de-saison.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cookerize.net/en/seasonal-food.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.cookerize.net/es/productos-de-temporada.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cookerize.net/en/seasonal-food.html"/>
+  </url>
+  <url>
     <loc>https://www.cookerize.net/conditions.html</loc>
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.cookerize.net/conditions.html"/>

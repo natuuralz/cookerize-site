@@ -33,11 +33,11 @@
 ## Guides
 
 - [Cuisiner avec ce qu'il reste dans le frigo](https://www.cookerize.net/frigo.html) — la méthode, puis ce que fait l'application.
-- [Cooking with what is left in the fridge](https://www.cookerize.net/en/fridge.html)
-- [Cocinar con lo que queda en la nevera](https://www.cookerize.net/es/nevera.html)
 - [Le batch cooking avec ses propres recettes](https://www.cookerize.net/batch-cooking.html) — pourquoi les recettes de la maison y ont leur place.
-- [Batch cooking with your own recipes](https://www.cookerize.net/en/batch-cooking.html)
-- [El batch cooking con tus propias recetas](https://www.cookerize.net/es/batch-cooking.html)
+- [Écrire une recette qui se suit vraiment](https://www.cookerize.net/creer-une-recette.html) — partir des ingrédients, choisir l'ustensile, ordonner les gestes.
+- [Les produits de saison, selon votre région](https://www.cookerize.net/produits-de-saison.html) — la saisonnalité suit la zone où vous vivez.
+- English: [fridge](https://www.cookerize.net/en/fridge.html) · [batch cooking](https://www.cookerize.net/en/batch-cooking.html) · [writing a recipe](https://www.cookerize.net/en/write-a-recipe.html) · [seasonal food](https://www.cookerize.net/en/seasonal-food.html)
+- Español: [nevera](https://www.cookerize.net/es/nevera.html) · [batch cooking](https://www.cookerize.net/es/batch-cooking.html) · [escribir una receta](https://www.cookerize.net/es/escribir-una-receta.html) · [productos de temporada](https://www.cookerize.net/es/productos-de-temporada.html)
 
 ## Démarches et données personnelles
 
