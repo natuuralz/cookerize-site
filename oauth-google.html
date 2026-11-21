@@ -3,37 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Cookerize</title>
 <!--
   Relais de retour pour la connexion Google.
 
-  Google renvoie la personne ici apres l'autorisation (cette adresse doit etre
-  declaree dans la console Google, parmi les URI de redirection autorisees).
-  La reponse arrive soit dans le fragment (#...), soit en parametres (?...)
-  quand c'est une erreur. Cette page ne fait que la transferer vers l'origine
-  de l'application, qui attend le fragment, et se referme.
+  Google renvoie la personne ici apres l'autorisation (adresse declaree dans la
+  console Google, parmi les URI de redirection autorisees). La reponse arrive
+  soit dans le fragment (#...), soit dans la requete (?...) pour certaines
+  erreurs. Cette page recopie l'une ET l'autre, tels quels, vers l'adresse
+  d'arrivee du site, que l'application Android ecoute comme App Link verifie.
 
-  Page volontairement minuscule : aucune dependance, aucun traitement des
-  valeurs (interdiction de lire le jeton pour autre chose que le transferer),
-  tout est recopie tel quel.
+  Page volontairement minuscule : aucune dependance, aucun script tiers, aucun
+  traitement des valeurs (jamais lues, jamais modifiees, seulement recopiees).
+  Si Android ignore la redirection automatique, un vrai lien cliquable reste
+  affiche : un clic reel sur une App Link verifiee est toujours honore.
 -->
 <style>
   body { margin:0; display:flex; align-items:center; justify-content:center;
-         min-height:100vh; background:#faf7f0; color:#2b2b2b;
-         font-family:system-ui,-apple-system,sans-serif; font-size:16px }
+         min-height:100vh; background:#faf7f0; color:#22201d;
+         font-family:system-ui,-apple-system,sans-serif; font-size:17px; line-height:1.6 }
+  .carte { max-width:34rem; padding:2.5rem 1.5rem; text-align:center }
+  p { margin:0 0 1.4rem; color:#4a463f }
+  a { display:inline-block; padding:.85rem 1.6rem; border-radius:999px;
+      background:#c4623f; color:#fff; text-decoration:none; font-weight:500 }
+  a:hover { background:#9f4f33 }
+  a:focus-visible { outline:2px solid #9f4f33; outline-offset:2px }
 </style>
 </head>
 <body>
-<p id="msg">Retour a l'application…</p>
+<main class="carte">
+  <p id="msg">Retour à l'application…</p>
+  <p id="suite" hidden><a id="lien" href="https://www.cookerize.net/oauth-retour">Revenir à l'application</a></p>
+</main>
 <script>
 (function () {
-  var origine = 'https://localhost/';
-  var fragment = window.location.hash || '';
+  var ARRIVEE = 'https://www.cookerize.net/oauth-retour';
   var requete = window.location.search || '';
-  // Google met le jeton dans le fragment et ses erreurs dans la requete :
-  // on transfere l'un ou l'autre, sans jamais lire une valeur.
-  var suite = fragment && fragment.length > 1 ? fragment : requete;
-  window.location.replace(origine + suite);
+  var fragment = window.location.hash || '';
+  // Google met le jeton dans le fragment et certaines erreurs dans la requete :
+  // on recopie les deux tels quels, sans jamais lire ni modifier une valeur.
+  var cible = ARRIVEE + requete + fragment;
+
+  var textes = {
+    fr: { titre: 'Cookerize — retour de connexion',
+          message: 'Retour à l’application…',
+          lien: 'Revenir à l’application',
+          erreur: 'La connexion n’a pas abouti. Vous pouvez fermer cette page et réessayer depuis l’application Cookerize.' },
+    en: { titre: 'Cookerize — sign-in return',
+          message: 'Returning to the app…',
+          lien: 'Back to the app',
+          erreur: 'The sign-in didn’t complete. You can close this page and try again from the Cookerize app.' },
+    es: { titre: 'Cookerize — volver del inicio de sesión',
+          message: 'Volviendo a la aplicación…',
+          lien: 'Volver a la aplicación',
+          erreur: 'El inicio de sesión no se completó. Puedes cerrar esta página e intentarlo de nuevo desde la aplicación Cookerize.' }
+  };
+  var m = /(?:^|[?&])lang=(fr|en|es)(?:&|#|$)/.exec(requete);
+  var lang = m ? m[1]
+           : /^en/i.test(navigator.language || '') ? 'en'
+           : /^es/i.test(navigator.language || '') ? 'es' : 'fr';
+  var t = textes[lang];
+  document.documentElement.lang = lang;
+  document.title = t.titre;
+
+  var msg = document.getElementById('msg');
+  var bloc = document.getElementById('suite');
+  var lien = document.getElementById('lien');
+
+  if (!requete && !fragment) {
+    // Rien a transferer : pas de redirection, message d'erreur calme.
+    msg.textContent = t.erreur;
+    return;
+  }
+
+  msg.textContent = t.message;
+  lien.textContent = t.lien;
+  lien.setAttribute('href', cible);
+  bloc.hidden = false;
+
+  // Cas navigateur/PWA (jamais sur Android) : prevenir la fenetre appelante.
+  // L'application verifie l'origine de son cote ; rien a faire de plus ici.
+  if (window.opener) {
+    try {
+      window.opener.postMessage({ oauthRetour: true, search: requete, hash: fragment }, '*');
+    } catch (e) {}
+  }
+
+  // Redirection automatique ; si Android l'ignore, le lien ci-dessus reste
+  // cliquable et un clic reel sur une App Link verifiee est toujours honore.
+  window.location.replace(cible);
 })();
 </script>
 </body>

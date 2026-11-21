@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cookerize — Connexion terminée</title>
+<!--
+  Page d'arrivee du retour de connexion (Google ou Facebook).
+
+  Sur Android, cette adresse est une App Link verifiee (pathPrefix
+  "/oauth-retour") : le systeme ouvre l'application avant meme d'afficher la
+  page. Cette page ne sert donc qu'aux visiteurs sans l'application
+  (ordinateur, iPhone, navigateur) : une phrase calme qui dit que la connexion
+  est terminee et qu'on peut revenir dans l'application Cookerize, en francais
+  par defaut, ou en anglais / espagnol si l'adresse porte ?lang=en ou ?lang=es.
+
+  Aucune dependance, aucun script tiers, tout le texte via textContent.
+-->
+<style>
+  body { margin:0; display:flex; align-items:center; justify-content:center;
+         min-height:100vh; background:#faf7f0; color:#22201d;
+         font-family:system-ui,-apple-system,sans-serif; font-size:17px; line-height:1.6 }
+  .carte { max-width:34rem; padding:2.5rem 1.5rem; text-align:center }
+  h1 { font-family:Georgia,'Times New Roman',serif; font-weight:500;
+       font-size:1.7rem; margin:0 0 .75rem }
+  p { margin:0; color:#4a463f }
+</style>
+</head>
+<body>
+<main class="carte">
+  <h1 id="titre">Connexion terminée</h1>
+  <p id="texte">Vous pouvez revenir dans l'application Cookerize.</p>
+</main>
+<script>
+(function () {
+  var textes = {
+    fr: { titre: 'Connexion terminée',
+          texte: 'Vous pouvez revenir dans l’application Cookerize.' },
+    en: { titre: 'Sign-in complete',
+          texte: 'You can return to the Cookerize app.' },
+    es: { titre: 'Inicio de sesión completado',
+          texte: 'Puedes volver a la aplicación Cookerize.' }
+  };
+  var m = /(?:^|[?&])lang=(fr|en|es)(?:&|#|$)/.exec(window.location.search || '');
+  var lang = m ? m[1] : 'fr';
+  var t = textes[lang];
+  document.documentElement.lang = lang;
+  document.title = 'Cookerize — ' + t.titre;
+  document.getElementById('titre').textContent = t.titre;
+  document.getElementById('texte').textContent = t.texte;
+})();
+</script>
+</body>
+</html>
