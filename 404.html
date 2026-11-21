@@ -68,6 +68,7 @@
 
   <footer>
     <a id="ouvrir-app" class="btn" hidden></a>
+    <p id="note-autre-appareil" class="discret" hidden></p>
     <a id="retour-accueil" class="btn-second" href="/"></a>
     <p id="signature" class="discret"></p>
   </footer>
@@ -103,6 +104,7 @@
         titre: 'Page introuvable',
         texte: 'Cette adresse ne mène à rien. La recette que vous cherchez est peut-être dans l’application.',
       },
+      appliAndroid: 'L’application Cookerize est disponible sur Android. La recette se lit très bien ici.',
     },
     en: {
       ingredients: 'Ingredients',
@@ -126,6 +128,7 @@
         titre: 'Page not found',
         texte: 'This address leads nowhere. The recipe you’re looking for may be in the app.',
       },
+      appliAndroid: 'The Cookerize app is available on Android. The recipe reads just fine here.',
     },
     es: {
       ingredients: 'Ingredientes',
@@ -149,6 +152,7 @@
         titre: 'Página no encontrada',
         texte: 'Esta dirección no lleva a nada. La receta que buscas quizá está en la aplicación.',
       },
+      appliAndroid: 'La aplicación Cookerize está disponible en Android. La receta se lee perfectamente aquí.',
     },
   }
 
@@ -174,6 +178,12 @@
     preparerBoutons(langue)
 
     texte($('titre-recette'), contenu.titre || '')
+    // Hors Android : la phrase calme remplace le bouton, uniquement ici où
+    // la recette est réellement affichée.
+    if (!estAndroid()) {
+      texte($('note-autre-appareil'), L.appliAndroid || '')
+      $('note-autre-appareil').hidden = false
+    }
     const ingredients = Array.isArray(contenu.ingredients) ? contenu.ingredients : []
     const etapes = Array.isArray(contenu.etapes) ? contenu.etapes : []
 
@@ -217,16 +227,40 @@
     document.title = 'Cookerize'
   }
 
+  // ─── Plateforme ─────────────────────────────────────────────────────────────
+  // Le seul signal disponible est l'en-tête utilisateur du navigateur. S'il
+  // dit Android : le bouton vers l'application (le système ouvre le magasin
+  // tout seul si l'application manque). Sinon — iPhone, iPad, ordinateur,
+  // signal illisible — pas de bouton qui ne mène nulle part : une phrase
+  // calme, dans la langue de la recette.
+  function estAndroid() {
+    const ua = navigator.userAgent || ''
+    if (/Android/i.test(ua)) return true
+    // Chrome desktop se présente aussi avec Android dans la chaîne des
+    // appareils mobiles de Blob/UA-CH ; on reste simple : présence du mot.
+    return false
+  }
+
   // Le bouton « ouvrir dans l'application » pointe sur CETTE adresse :
   // c'est elle que l'application sait intercepter (App Links).
   function preparerBoutons(langue) {
     const L = LIBELLES[langue]
     const ouvrir = $('ouvrir-app')
-    texte(ouvrir, L.ouvrirApp)
-    ouvrir.href = window.location.href
-    ouvrir.hidden = false
     texte($('retour-accueil'), L.retourAccueil)
     texte($('signature'), L.signature)
+    const note = $('note-autre-appareil')
+    // La phrase « hors Android » n'apparaît qu'avec une recette réelle :
+    // sur un état d'erreur, le message du bas suffit.
+    if (estAndroid()) {
+      texte(ouvrir, L.ouvrirApp)
+      ouvrir.href = window.location.href
+      ouvrir.hidden = false
+      note.hidden = true
+    } else {
+      // Aucune promesse d'application hors Android : pas de bouton.
+      ouvrir.hidden = true
+      note.hidden = true
+    }
   }
 
   async function ouvrirPartage(id) {
