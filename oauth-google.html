@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookerize</title>
+<!--
+  Relais de retour pour la connexion Google.
+
+  Google renvoie la personne ici apres l'autorisation (cette adresse doit etre
+  declaree dans la console Google, parmi les URI de redirection autorisees).
+  La reponse arrive soit dans le fragment (#...), soit en parametres (?...)
+  quand c'est une erreur. Cette page ne fait que la transferer vers l'origine
+  de l'application, qui attend le fragment, et se referme.
+
+  Page volontairement minuscule : aucune dependance, aucun traitement des
+  valeurs (interdiction de lire le jeton pour autre chose que le transferer),
+  tout est recopie tel quel.
+-->
+<style>
+  body { margin:0; display:flex; align-items:center; justify-content:center;
+         min-height:100vh; background:#faf7f0; color:#2b2b2b;
+         font-family:system-ui,-apple-system,sans-serif; font-size:16px }
+</style>
+</head>
+<body>
+<p id="msg">Retour a l'application…</p>
+<script>
+(function () {
+  var origine = 'https://localhost/';
+  var fragment = window.location.hash || '';
+  var requete = window.location.search || '';
+  // Google met le jeton dans le fragment et ses erreurs dans la requete :
+  // on transfere l'un ou l'autre, sans jamais lire une valeur.
+  var suite = fragment && fragment.length > 1 ? fragment : requete;
+  window.location.replace(origine + suite);
+})();
+</script>
+</body>
+</html>
