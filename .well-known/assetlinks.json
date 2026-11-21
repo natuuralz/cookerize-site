@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.natuuralz.carnet",
+      "sha256_cert_fingerprints": [
+        "E3:FF:7A:DE:B5:6A:20:AF:37:FA:10:76:D5:4A:FA:7D:4F:00:87:1A:A1:28:98:5E:A6:59:A3:95:2C:54:EF:F8",
+        "B5:C1:AA:3D:83:99:E0:89:6B:9C:90:CD:47:61:A7:3B:4C:ED:B5:2C:81:74:EB:EA:77:D9:CA:4C:87:2F:AC:2B"
+      ]
+    }
+  }
+]

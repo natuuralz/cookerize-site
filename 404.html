@@ -1,0 +1,273 @@
+<!doctype html>
+<!--
+  Cookerize — page 404 du site, et page de lecture des partages par lien.
+
+  GitHub Pages sert ce fichier pour toute adresse inconnue, dont
+  https://www.cookerize.net/r/<id> : le lien de partage porte ainsi le domaine
+  du site, sans DNS ni proxy. La page lit l'identifiant dans l'adresse, appelle
+  l'API et affiche la recette elle-même.
+
+  Autonome : JavaScript simple, aucune dépendance, aucune ressource externe
+  (la feuille styles.css n'est pas chargée, les couleurs de Cookerize sont
+  reprises ici en dur). Tout le texte affiché vient de la recette ou des
+  libellés ci-dessous — rien n'est interprété comme du HTML.
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookerize</title>
+<style>
+  /* Palette Cookerize (styles.css) : ivoire, papier, encre, sauge, trait. */
+  body { margin: 0; min-height: 100vh; background: #faf7f0; color: #22201d;
+    font-family: system-ui, -apple-system, sans-serif; font-size: 17px;
+    line-height: 1.7; }
+  main { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem 3rem; }
+  .marque { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
+    font-size: 1.3rem; color: #22201d; text-decoration: none;
+    letter-spacing: -.01em; }
+  h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 500;
+    letter-spacing: -.01em; line-height: 1.15; font-size: 1.6rem; margin: 2rem 0 1rem; }
+  h2 { color: #5a6a52; font-size: 1.05rem; margin-top: 2rem; }
+  li { line-height: 1.6; }
+  .note { color: #4a463f; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid #e5ded0; }
+  .btn { display: inline-block; padding: .85rem 1.6rem; border-radius: 999px;
+    background: #7c8b72; color: #fff; text-decoration: none; font-weight: 500;
+    border: 1px solid #7c8b72; }
+  .btn:hover { background: #5a6a52; }
+  .btn-second { display: inline-block; margin-left: .8rem; padding: .85rem 1.2rem;
+    border-radius: 999px; border: 1px solid #e5ded0; color: #22201d;
+    text-decoration: none; background: transparent; }
+  .btn-second:hover { background: #f2ece0; }
+  .discret { color: #6e685d; font-size: .9rem; margin-top: 1rem; }
+</style>
+</head>
+<body>
+<main>
+  <a class="marque" href="/">Cookerize</a>
+
+  <!-- La recette : rempli par le script après la lecture du partage. -->
+  <section id="recette" hidden>
+    <h1 id="titre-recette"></h1>
+    <section id="bloc-ingredients" hidden>
+      <h2 id="titre-ingredients"></h2>
+      <ul id="ingredients"></ul>
+    </section>
+    <section id="bloc-etapes" hidden>
+      <h2 id="titre-etapes"></h2>
+      <ol id="etapes"></ol>
+    </section>
+  </section>
+
+  <!-- Les états calmes : introuvable, expiré, réseau, page inconnue. -->
+  <section id="message" hidden>
+    <h1 id="message-titre"></h1>
+    <p id="message-texte" class="note"></p>
+  </section>
+
+  <footer>
+    <a id="ouvrir-app" class="btn" hidden></a>
+    <a id="retour-accueil" class="btn-second" href="/"></a>
+    <p id="signature" class="discret"></p>
+  </footer>
+</main>
+
+<script>
+(() => {
+  'use strict'
+
+  // ─── Libellés, dans les trois langues de l'application ─────────────────────
+  // La recette porte son champ `langue` : c'est lui qui choisit la ligne.
+  // Aucun texte de la page n'est écrit en dur ailleurs.
+  const LIBELLES = {
+    fr: {
+      ingredients: 'Ingrédients',
+      etapes: 'Étapes',
+      ouvrirApp: 'Ouvrir dans l’application',
+      retourAccueil: 'Aller à l’accueil',
+      signature: 'Partagé depuis Cookerize, le carnet de recettes hors ligne.',
+      introuvable: {
+        titre: 'Partage introuvable',
+        texte: 'Ce lien n’existe pas, ou plus. Demandez un nouveau lien à la personne qui vous l’a envoyé.',
+      },
+      expire: {
+        titre: 'Partage expiré',
+        texte: 'Ce partage a expiré. Demandez un nouveau lien à la personne qui vous l’a envoyé.',
+      },
+      reseau: {
+        titre: 'Connexion impossible',
+        texte: 'La recette n’a pas pu être chargée. Vérifiez votre connexion, puis réessayez.',
+      },
+      pageInconnue: {
+        titre: 'Page introuvable',
+        texte: 'Cette adresse ne mène à rien. La recette que vous cherchez est peut-être dans l’application.',
+      },
+    },
+    en: {
+      ingredients: 'Ingredients',
+      etapes: 'Steps',
+      ouvrirApp: 'Open in the app',
+      retourAccueil: 'Go to the home page',
+      signature: 'Shared from Cookerize, the offline recipe book.',
+      introuvable: {
+        titre: 'Share not found',
+        texte: 'This link doesn’t exist, or no longer does. Ask the person who sent it for a new link.',
+      },
+      expire: {
+        titre: 'Share expired',
+        texte: 'This share has expired. Ask the person who sent it for a new link.',
+      },
+      reseau: {
+        titre: 'Connection problem',
+        texte: 'The recipe couldn’t be loaded. Check your connection, then try again.',
+      },
+      pageInconnue: {
+        titre: 'Page not found',
+        texte: 'This address leads nowhere. The recipe you’re looking for may be in the app.',
+      },
+    },
+    es: {
+      ingredients: 'Ingredientes',
+      etapes: 'Pasos',
+      ouvrirApp: 'Abrir en la aplicación',
+      retourAccueil: 'Ir a la página de inicio',
+      signature: 'Compartido desde Cookerize, el recetario sin conexión.',
+      introuvable: {
+        titre: 'Compartido no encontrado',
+        texte: 'Este enlace no existe, o ya no existe. Pide un enlace nuevo a la persona que te lo envió.',
+      },
+      expire: {
+        titre: 'Compartido caducado',
+        texte: 'Este compartido ha caducado. Pide un enlace nuevo a la persona que te lo envió.',
+      },
+      reseau: {
+        titre: 'Conexión imposible',
+        texte: 'No se pudo cargar la receta. Comprueba tu conexión y vuelve a intentarlo.',
+      },
+      pageInconnue: {
+        titre: 'Página no encontrada',
+        texte: 'Esta dirección no lleva a nada. La receta que buscas quizá está en la aplicación.',
+      },
+    },
+  }
+
+  const API = 'https://api.cookerize.workers.dev/v1/partages/'
+  // Même alphabet que le serveur (base64url) : rien d'autre n'est demandé à l'API.
+  const MOTIF_ID = /^[A-Za-z0-9_-]{10,64}$/
+
+  const $ = (id) => document.getElementById(id)
+  // Tout texte d'utilisateur passe par textContent : jamais innerHTML.
+  const texte = (noeud, t) => { noeud.textContent = t }
+
+  function choisirLangue(code) {
+    const l = String(code || '').toLowerCase()
+    return l === 'en' || l === 'es' ? l : 'fr'
+  }
+
+  function montrerRecette(contenu) {
+    const langue = choisirLangue(contenu.langue)
+    const L = LIBELLES[langue]
+    document.documentElement.lang = langue
+    // Les libellés de la page suivent la langue de la RECETTE, pas celle du
+    // navigateur : celui qui ouvre le lien lit ce que l'auteur a écrit.
+    preparerBoutons(langue)
+
+    texte($('titre-recette'), contenu.titre || '')
+    const ingredients = Array.isArray(contenu.ingredients) ? contenu.ingredients : []
+    const etapes = Array.isArray(contenu.etapes) ? contenu.etapes : []
+
+    if (ingredients.length) {
+      texte($('titre-ingredients'), L.ingredients)
+      const ul = $('ingredients')
+      for (const i of ingredients) {
+        const li = document.createElement('li')
+        const nom = typeof i?.nom === 'string' ? i.nom : ''
+        // `quantite` et `unite` sont deux champs séparés de l'API : on les
+        // réassemble ici, sans rien inventer quand l'un des deux manque.
+        let ligne = nom
+        if (i?.quantite !== undefined && i?.quantite !== null) {
+          ligne += ' — ' + String(i.quantite) + (i?.unite ? ' ' + String(i.unite) : '')
+        }
+        texte(li, ligne)
+        ul.appendChild(li)
+      }
+      $('bloc-ingredients').hidden = false
+    }
+    if (etapes.length) {
+      texte($('titre-etapes'), L.etapes)
+      const ol = $('etapes')
+      for (const e of etapes) {
+        const li = document.createElement('li')
+        texte(li, typeof e === 'string' ? e : '')
+        ol.appendChild(li)
+      }
+      $('bloc-etapes').hidden = false
+    }
+    $('recette').hidden = false
+    document.title = (contenu.titre ? contenu.titre + ' — ' : '') + 'Cookerize'
+  }
+
+  function montrerMessage(cle, langue) {
+    const L = LIBELLES[langue]
+    const m = L[cle] || L.pageInconnue
+    texte($('message-titre'), m.titre)
+    texte($('message-texte'), m.texte)
+    $('message').hidden = false
+    document.title = 'Cookerize'
+  }
+
+  // Le bouton « ouvrir dans l'application » pointe sur CETTE adresse :
+  // c'est elle que l'application sait intercepter (App Links).
+  function preparerBoutons(langue) {
+    const L = LIBELLES[langue]
+    const ouvrir = $('ouvrir-app')
+    texte(ouvrir, L.ouvrirApp)
+    ouvrir.href = window.location.href
+    ouvrir.hidden = false
+    texte($('retour-accueil'), L.retourAccueil)
+    texte($('signature'), L.signature)
+  }
+
+  async function ouvrirPartage(id) {
+    // Langue d'attente : celle du navigateur, corrigée dès la réponse de l'API.
+    const langue = choisirLangue((navigator.language || 'fr').slice(0, 2))
+    preparerBoutons(langue)
+    try {
+      const rep = await fetch(API + encodeURIComponent(id), { headers: { accept: 'application/json' } })
+      if (rep.ok) {
+        const corps = await rep.json().catch(() => null)
+        if (corps && corps.contenu) {
+          montrerRecette(corps.contenu)
+          return
+        }
+        montrerMessage('reseau', langue)
+        return
+      }
+      // 404 INTROUVABLE, 410 EXPIRE : les deux codes que le serveur distingue.
+      const corps = await rep.json().catch(() => null)
+      const code = corps && corps.code
+      if (rep.status === 404 || code === 'INTROUVABLE') montrerMessage('introuvable', langue)
+      else if (rep.status === 410 || code === 'EXPIRE') montrerMessage('expire', langue)
+      else montrerMessage('reseau', langue)
+    } catch {
+      // Réseau absent ou API injoignable : un message, pas une erreur technique.
+      montrerMessage('reseau', langue)
+    }
+  }
+
+  // ─── Point d'entrée : où sommes-nous ? ─────────────────────────────────────
+  const partage = window.location.pathname.match(/^\/r\/([A-Za-z0-9_-]+)\/?$/)
+  if (partage && MOTIF_ID.test(partage[1])) {
+    ouvrirPartage(partage[1])
+  } else {
+    // Toute autre adresse inconnue : page « introuvable » sobre.
+    const langue = choisirLangue((navigator.language || 'fr').slice(0, 2))
+    preparerBoutons(langue)
+    $('ouvrir-app').hidden = true
+    montrerMessage('pageInconnue', langue)
+  }
+})()
+</script>
+</body>
+</html>
