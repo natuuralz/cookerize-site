@@ -8,3 +8,4 @@ Allow: /
 # source officielle. À faire au prochain cycle de veille.
 
 Sitemap: https://www.cookerize.net/sitemap.xml
+
