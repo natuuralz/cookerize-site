@@ -1,9 +1,9 @@
 # Cookerize
 
-> Cookerize est une application de cuisine, sur Android et sur le web, qui
+> Cookerize est une application de cuisine pour Android, qui
 > répond à la question du soir : « qu'est-ce qu'on mange ? ». On y écrit ses
 > recettes, on y range ce qu'on a dans son frigo, et l'application propose
-> d'abord ce qu'on peut cuisiner sans repasser par le magasin.
+> d'abord les recettes qui utilisent le plus de ce qu'on a déjà.
 >
 > Le catalogue compte plus de 1100 recettes. L'application fonctionne hors
 > ligne et ne demande aucun compte pour commencer. Elle existe en français, en
